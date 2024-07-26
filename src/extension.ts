@@ -27,7 +27,14 @@ export function activate(context: vscode.ExtensionContext) {
 
         const config = vscode.workspace.getConfiguration('dateBlockComment');
         const userName = config.get('userName', ''); 
-        const date = new Date().toISOString().slice(0, 10);
+        
+        // 날짜 형식을 yy-mm-dd로 변경
+        const dateObj = new Date();
+        const year = String(dateObj.getFullYear()).slice(2); // 연도의 마지막 두 자리
+        const month = String(dateObj.getMonth() + 1).padStart(2, '0'); // 월은 0부터 시작하므로 +1
+        const day = String(dateObj.getDate()).padStart(2, '0');
+        const date = `${year}-${month}-${day}`; // yy-mm-dd 형식
+
         const startMarker = config.get('startMarker', 'START');
         const endMarker = config.get('endMarker', 'END');
 

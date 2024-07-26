@@ -19,6 +19,7 @@
         "code",
         "extension"
     ],
+	"icon": "main.png",
     "activationEvents": [
         "onCommand:extension.addDateBlockComment"
     ],
