@@ -2,7 +2,7 @@
     "name": "date-block-comment",
     "displayName": "Date Block Comment",
     "description": "Wraps selected text with a comment block that includes the current date and optionally user-defined start and end markers.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "KJW",
     "engines": {
         "vscode": "^1.91.0"
