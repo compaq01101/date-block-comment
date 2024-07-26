@@ -3,17 +3,31 @@
     "displayName": "Date Block Comment",
     "description": "Wraps selected text with a comment block that includes the current date and optionally user-defined start and end markers.",
     "version": "0.0.1",
-    "publisher": "your-name",
+    "publisher": "KJW",
     "engines": {
         "vscode": "^1.63.0"
     },
     "categories": [
+        "Programming Languages",
         "Other"
+    ],
+    "keywords": [
+        "comment",
+        "block",
+        "date",
+        "marker",
+        "code",
+        "extension"
     ],
     "activationEvents": [
         "onCommand:extension.addDateBlockComment"
     ],
     "main": "./out/extension.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/compaq01101/date-block-comment"
+    },
+    "license": "MIT",
     "contributes": {
         "configuration": {
             "type": "object",
