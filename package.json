@@ -1,0 +1,74 @@
+{
+    "name": "date-block-comment",
+    "displayName": "Date Block Comment",
+    "description": "Wraps selected text with a comment block that includes the current date and optionally user-defined start and end markers.",
+    "version": "0.0.1",
+    "publisher": "your-name",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.addDateBlockComment"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "Date Block Comment Settings",
+            "properties": {
+                "dateBlockComment.userName": {
+                    "type": "string",
+                    "default": "",
+                    "description": "The user name to include in the comment block. Leave empty for no user name."
+                },
+                "dateBlockComment.startMarker": {
+                    "type": "string",
+                    "default": "START",
+                    "description": "The start marker for the comment block."
+                },
+                "dateBlockComment.endMarker": {
+                    "type": "string",
+                    "default": "END",
+                    "description": "The end marker for the comment block."
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "extension.addDateBlockComment",
+                "title": "Add Date Block Comment"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.addDateBlockComment",
+                "key": "ctrl+alt+n",
+                "when": "editorTextFocus"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.3",
+        "@types/mocha": "^9.0.0",
+        "@types/node": "14.x",
+        "@types/vscode": "^1.91.0",
+        "@typescript-eslint/eslint-plugin": "^5.8.0",
+        "@typescript-eslint/parser": "^5.8.0",
+        "eslint": "^8.5.0",
+        "glob": "^7.1.7",
+        "mocha": "^9.1.3",
+        "typescript": "^4.5.4",
+        "vscode-test": "^1.6.1"
+    }
+}
